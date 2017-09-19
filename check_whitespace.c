@@ -65,7 +65,13 @@ int is_clean(char* str) {
   // the first is less than the second (in alphabetical order),
   // 0 if they're equal, and a positive value if the first is
   // greater than the second.
-  result = strcmp(str, cleaned);
+  if(strcmp(cleaned,"") != 0){
+  result = strcmp(str,cleaned);
+  free(cleaned);
+  }
+  else{
+  result = 1;
+  }
 
   return result == 0;
 }
